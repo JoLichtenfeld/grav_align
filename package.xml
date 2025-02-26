@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>grav_align</name>
+  <version>0.0.1</version>
+  <description>Gravity alignment node for IMU data</description>
+  <maintainer email="lichtenfeld@sim.tu-darmstadt.de">Jonathan Lichtenfeld</maintainer>
+  <license>Apache-2.0</license>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_ros</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

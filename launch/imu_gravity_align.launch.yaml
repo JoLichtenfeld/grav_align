@@ -1,0 +1,32 @@
+launch:
+  - arg:
+      name: "imu_topic"
+      default: "ouster/imu"
+  - arg:
+      name: "parent_frame"
+      default: "world"
+  - arg:
+      name: "child_frame"
+      default: "os_sensor"
+  - arg:
+      name: namespace
+      default: ""
+
+  - node:
+      pkg: grav_align
+      exec: imu_gravity_aligner.py
+      name: imu_gravity_aligner
+      output: screen
+      param:
+      -
+        name: "imu_topic"
+        value: "$(var imu_topic)"
+      -
+        name: "parent_frame"
+        value: "$(var parent_frame)"
+      -
+        name: "child_frame"
+        value: "$(var child_frame)"
+      remap:
+        - from: "/tf"
+          to: "/drz_navbox/tf"
